@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ebe8f0"><title>心意小屋 · Little Room Card</title><link rel="stylesheet" href="style.css"><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}</script></head>
+<body>
+<div class="ambient" aria-hidden="true">
+  <div class="ambient-window window-left"></div><div class="ambient-window window-right"></div>
+  <div class="ambient-orbit"></div><div class="ambient-dust"></div>
+  <div class="ambient-stars"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i><i>✧</i></div>
+</div>
+<header>
+  <a class="brand" href="#" data-action="home" aria-label="返回首页"><span class="brand-en">Little Room Card</span><span class="brand-zh">心意小屋 · 3D 立体贺卡</span></a>
+  <nav><div class="nav-note"><span>给 TA 一份生日惊喜</span><small>照片、声音，还有想说的话</small></div></nav>
+</header>
+<main id="home">
+  <section class="hero">
+    <div class="intro">
+      <div class="kicker"><i>a little room card</i><span>一张能走进去的 3D 立体贺卡</span></div>
+      <h1>把想说的话，<br><em>藏进一个小房间</em></h1>
+      <p class="lead">心意小屋，是一张能走进去的 3D 生日贺卡。把照片、声音、以后想一起做的事和生日祝福放进房间里的小物件，TA 打开后可以一边逛，一边看完你准备的内容。</p>
+      <div class="actions"><button class="pill dark big" data-action="make">开始做一张卡</button><button class="pill ghost" data-action="visit">先看看样卡</button></div>
+    </div>
+    <div class="room-stage" id="home-stage"><div class="stage-label"><i>A birthday room for you</i><span>为 TA 准备的一场小小生日派对</span></div><div id="viewport"></div><div id="loading">正在准备生日房间…</div><div class="room-caption"><span><i>The Party Room</i><small>生日派对小房间 · 点开看看</small></span><button data-action="visit" aria-label="进入生日小屋">↗</button></div><div class="orbit-note">拖动，换个角度看看小屋</div></div>
+  </section>
+  <section class="steps-four" id="story" aria-label="制作贺卡的四个步骤">
+    <div><b>01</b><i>Begin</i><span>写下 TA 的名字</span></div><div><b>02</b><i>Hide</i><span>把话和照片藏进物件</span></div><div><b>03</b><i>Preview</i><span>替 TA 先走进小屋</span></div><div><b>04</b><i>Deliver</i><span>把这份心意交给 TA</span></div>
+  </section>
+  <section class="samples" id="samples"><div class="section-heading"><h2>Sample Cards<small>样卡 · 不同场合的祝福</small></h2><p>生日、旅行和毕业，都可以做成一张能玩的卡。</p></div>
+    <div class="sample-grid">
+      <button class="sample-card available" data-action="visit"><div class="sample-art birthday" aria-hidden="true"><span class="paper-note"><i>To someone<br>very special.</i><small>HAPPY BIRTHDAY</small></span><span class="envelope"><i class="seal">L</i></span><span class="postmark">A LITTLE ROOM<br>WITH LOVE</span></div><div class="sample-meta"><div><span class="sample-no">No. 01</span><h3>生日贺卡</h3><p>一张可以走进去的生日卡</p></div><span class="sample-arrow">↗</span></div></button>
+      <article class="sample-card coming"><div class="sample-art journey" aria-hidden="true"><span class="paper-note"><i>Remember<br>that day?</i><small>OUR LITTLE JOURNEY</small></span><span class="envelope"><i class="seal">L</i></span></div><div class="sample-meta"><div><span class="sample-no">No. 02</span><h3>旅行回忆</h3><p>把一起看过的风景，留下来</p></div><span class="coming-label">筹备中</span></div></article>
+      <article class="sample-card wishes coming"><div class="sample-art tomorrow" aria-hidden="true"><span class="paper-note"><i>To all your<br>tomorrows.</i><small>A NEW CHAPTER</small></span><span class="envelope"><i class="seal">L</i></span></div><div class="sample-meta"><div><span class="sample-no">No. 03</span><h3>毕业祝福</h3><p>下一段旅程，也要闪闪发光</p></div><span class="coming-label">筹备中</span></div></article>
+    </div>
+  </section>
+  <section class="bottom-cta"><span class="eyebrow">a little room, a birthday surprise</span><h2>把照片、声音和祝福，<br>做成一张可以玩的生日卡。</h2><button class="pill dark big" data-action="make">为 TA 做一张卡</button></section>
+  <footer><i>Little Room Card</i><span>心意小屋 · 把想说的话做成一张生日卡</span></footer>
+</main>
+<section id="editor" hidden>
+ <aside class="editor-panel">
+  <button class="editor-home-tab" data-action="home"><span aria-hidden="true">←</span> 返回</button>
+  <nav id="maker-steps" aria-label="布置步骤"></nav>
+  <form id="card-form" novalidate>
+   <section class="maker-page" data-step="0"><span class="step-kicker">THE INVITATION</span><h3>这张生日卡，要送给谁？</h3><p>名字会出现在开场和最后的生日信上。</p><label>收礼人的名字<input name="to" maxlength="18" placeholder="例如：小满" required></label><label>你的署名<input name="from" maxlength="18" placeholder="例如：阿鹿" required></label></section>
+   <section class="maker-page" data-step="1" hidden><span class="step-kicker">THE CAMERA</span><h3>放几张一看就会笑的照片。</h3><p>最多添加 12 张照片，也可以为每张照片写一句当时的回忆。</p><label class="upload">＋ 添加照片<input id="photo" type="file" multiple accept="image/png,image/jpeg,image/webp"><span id="photo-status" aria-live="polite"></span></label><div id="photo-list"></div><label>给这些照片写个开场<textarea name="memory" maxlength="300" placeholder="还记得那天，我们……"></textarea></label></section>
+   <section class="maker-page" data-step="2" hidden><span class="step-kicker">A SONG FOR YOU</span><h3>想唱哪首歌给 TA 听？</h3><p>生日歌、哼一段旋律，都很好。也可以上传提前录好的版本；暂时不放歌曲，就跳过这一步。</p><div class="voice-recorder"><span id="song-state" role="status">准备好了，就唱一小段吧。</span><strong id="song-clock">00:00</strong><div><button type="button" class="pill dark" id="song-start">录一段歌</button><button type="button" class="pill" id="song-stop" hidden>结束并保存</button></div></div><label class="upload">＋ 上传音频<input id="song-upload" type="file" accept=".mp3,.m4a,.mp4,.wav,.ogg,.webm,.aac"><span>最长 5 分钟，16 MB 以内。</span></label><audio id="song-preview" controls hidden preload="metadata"></audio><button type="button" class="text-btn" id="song-remove" hidden>删除这段歌</button><label>给这段歌起个名字<input name="song" maxlength="60" placeholder="例如：有一点跑调的生日歌"></label><div id="cover-preview" class="cover-preview"></div><label class="upload">＋ 添加唱片封面（可选）<input id="album-cover" type="file" accept="image/png,image/jpeg,image/webp"><span>不上传也有默认封面。</span></label><button type="button" class="text-btn" id="remove-cover" hidden>移除封面</button></section>
+   <section class="maker-page" data-step="3" hidden><span class="step-kicker">THE TELEPHONE</span><h3>有几句话，想让 TA 亲耳听到。</h3><p>可以录下最长 90 秒的声音。TA 拿起电话，就能听到你。</p><div class="voice-recorder"><span id="record-state" role="status">准备好了，就开始吧。</span><strong id="record-clock">00:00</strong><div><button type="button" class="pill dark" id="record-start">开始录音</button><button type="button" class="pill" id="record-stop" hidden>结束并保存</button></div></div><audio id="voice-preview" controls hidden preload="metadata"></audio><button type="button" class="text-btn" id="remove-voice" hidden>删除这段录音</button><label>也可以写下来<textarea name="secret" maxlength="300" placeholder="如果暂时不方便录音，就把话写在这里。"></textarea></label></section>
+   <section class="maker-page" data-step="4" hidden><span class="step-kicker">THE BALLOONS</span><h3>以后，还有什么想和 TA 一起做？</h3><p>分别写下三件事，它们会出现在黄、蓝、粉三只气球里。</p><div class="wish-fields"><label class="wish-field wish-yellow"><i aria-hidden="true"></i><input data-wish-line="0" maxlength="65" aria-label="第一件想一起做的事" placeholder="第一件想一起做的事"></label><label class="wish-field wish-blue"><i aria-hidden="true"></i><input data-wish-line="1" maxlength="65" aria-label="第二件想一起做的事" placeholder="第二件想一起做的事"></label><label class="wish-field wish-pink"><i aria-hidden="true"></i><input data-wish-line="2" maxlength="65" aria-label="第三件想一起做的事" placeholder="第三件想一起做的事"></label></div></section>
+   <section class="maker-page" data-step="5" hidden><span class="step-kicker">THE BIRTHDAY CAKE</span><h3>最后，写下最想说的生日祝福。</h3><p>吹灭蜡烛后，TA 会读到这封生日信。</p><label>最后想对 TA 说<textarea name="letter" maxlength="500" rows="7" placeholder="新的一岁，愿你……"></textarea></label><div id="maker-summary"></div></section>
+   <div class="form-actions"><button type="button" class="pill" id="step-back">上一步</button><button type="button" class="pill dark" id="step-next">下一步</button><button type="submit" class="pill dark" id="preview-card" hidden>体验整张卡</button><button type="button" class="pill" data-action="share" id="export-card" hidden>完成并导出</button></div><p id="save-status" hidden aria-live="polite"></p>
+  </form>
+ </aside>
+ <div id="maker-scrollbar" aria-hidden="true"><i></i></div>
+ <div id="editor-stage"><div class="edit-preview-label"><span class="eyebrow">A BIRTHDAY CARD FOR <b id="preview-name">你</b></span><p id="step-room-caption">把想说的话，一件一件放进去。</p></div><button type="button" id="preview-object" class="object-preview-bubble" hidden>看看这件小物</button></div>
+</section>
+
+<section id="experience" hidden><div class="experience-top"><button class="pill light" data-action="back">← 返回</button><span id="room-dedication"></span><button class="pill light" id="music">♫ 音乐关</button></div><div id="invitation"><div class="invitation-card"><div class="eyebrow">HAPPY BIRTHDAY</div><div class="key-symbol">⌂</div><h2><span id="invite-to"></span>，生日快乐。</h2><p id="invite-from"></p><button class="pill dark big" id="enter">进去看看</button><small>打开声音，会更有气氛。</small></div></div><div id="quest" hidden><div><span class="eyebrow">为你准备的生日内容</span><p id="quest-text"></p></div><span id="progress">0 / 4</span></div><div id="hotspots"></div><div id="visit-help" hidden>拖动环顾 · WASD 移动 · 点击物件上的名字<br><span>也可以用下方导航，直接去看下一件小物。</span></div><div id="object-nav" hidden></div><div id="joystick" hidden><div></div></div></section>
+<dialog id="modal"><button id="close-modal" aria-label="关闭">×</button><div id="modal-body"></div></dialog><div id="toast" role="status"></div><audio id="background-music" src="birthday-music.m4a" preload="metadata" loop hidden></audio><script type="module" src="app.js"></script></body></html>
+
